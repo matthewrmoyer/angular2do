@@ -1,0 +1,14 @@
+<p>
+  todo works!
+</p>
+
+<input type="text">
+
+<ul>
+  <li *ngFor="let todoItem of todoItems"
+  (click) = "toggleComplete(todoItem)"
+    >
+    <span>{{todoItem.content}}</span>
+    <span>{{todoItem.complete}}</span>
+    </li>
+</ul>
