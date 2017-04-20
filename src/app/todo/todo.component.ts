@@ -9,14 +9,24 @@ import { TodoDataService } from "app/todo-data.service";
 })
 export class TodoComponent implements OnInit {
 
-  constructor(private todoDataService: TodoDataService) { }
-
-  toggleComplete(todoItem){
-    this.todoDataService.toggleComplete(todoItem)
+  public newTodoItem: TodoItem;
+  public todoItems: TodoItem[];
+  
+  constructor(private todoDataService: TodoDataService) { 
+    this.newTodoItem = new TodoItem({content: "Adsfa"});
+    this.todoItems = this.todoDataService.todoItems;
   }
 
-  todoItems = this.todoDataService.todoItems;
+ public toggleComplete(todoItem): void{
+    this.todoDataService.toggleComplete(todoItem)
+  }
+  
+  public addTodoItem(todoItem): void{
+    this.todoDataService.addTodoItem(todoItem)
+  }
+
   ngOnInit() {
     console.log(this.todoItems)
+    console.log(this.newTodoItem)
   }
 }
