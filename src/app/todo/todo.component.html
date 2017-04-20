@@ -2,19 +2,14 @@
   todo works!
 </p>
 
-
-
 <ul>
   <li *ngFor="let todoItem of todoItems"
   (click) = "toggleComplete(todoItem)"
-  
+  [ngClass] ="{'complete': todoItem.complete, 'incomplete': !todoItem.complete}"  
     >
     <span>{{todoItem.content}}</span>
-    <span>{{todoItem.complete}}</span>
     </li>
 </ul>
-
-
 
 <input class = "new-todo" 
 placeholder="What needs to be done?" 

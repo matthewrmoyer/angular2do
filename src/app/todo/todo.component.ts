@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { TodoItem } from "app/todo-item";
 import { TodoDataService } from "app/todo-data.service";
 
@@ -7,13 +7,14 @@ import { TodoDataService } from "app/todo-data.service";
   templateUrl: './todo.component.html',
   styleUrls: ['./todo.component.scss']
 })
-export class TodoComponent implements OnInit {
+
+export class TodoComponent {
 
   public newTodoItem: TodoItem;
   public todoItems: TodoItem[];
   
   constructor(private todoDataService: TodoDataService) { 
-    this.newTodoItem = new TodoItem({content: "Adsfa"});
+    this.newTodoItem = new TodoItem();
     this.todoItems = this.todoDataService.todoItems;
   }
 
@@ -23,10 +24,5 @@ export class TodoComponent implements OnInit {
   
   public addTodoItem(todoItem): void{
     this.todoDataService.addTodoItem(todoItem)
-  }
-
-  ngOnInit() {
-    console.log(this.todoItems)
-    console.log(this.newTodoItem)
   }
 }

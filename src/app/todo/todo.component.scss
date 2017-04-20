@@ -1,0 +1,24 @@
+ul{
+    display: flex;
+    flex-direction: column;
+    width: calc(100px + 2vw);
+}
+
+li{
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+}
+
+.complete{
+    &:after{
+        font-family: FontAwesome;
+        content: "\f05d";
+    }
+}
+.incomplete{
+    &:after{
+        font-family: FontAwesome;
+        content: "\f10c";
+    }
+}

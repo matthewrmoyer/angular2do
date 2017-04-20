@@ -8,7 +8,7 @@ export class TodoDataService {
   todoItems: TodoItem[] = [
     {content: "Wash Car", complete: false},
     {content: "Do Laundry", complete: false},    
-    ];
+  ];
 
   addTodoItem(todoItem: TodoItem){
     this.todoItems.push(todoItem)
