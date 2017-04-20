@@ -11,7 +11,9 @@ export class TodoDataService {
   ];
 
   addTodoItem(todoItem: TodoItem){
-    this.todoItems.push(todoItem)
+    var itemToAdd = new TodoItem(todoItem);
+    this.todoItems.push(itemToAdd);
+    delete todoItem.content;
   }
   toggleComplete(todoItem: TodoItem){
     todoItem.complete? todoItem.complete=false: todoItem.complete=true;
